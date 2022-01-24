@@ -8,6 +8,7 @@ import Profile from "./components/Profile"
 function App() {
   //props drilling, set user at a global level
   const [ user, setUser ] = useState(null);
+  
   return (
     <div className="App">
       <Register />

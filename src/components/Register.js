@@ -38,6 +38,7 @@ function Register () {
 
     return(
         <form onSubmit={submitForm}>
+            <h2>Register</h2>
             <label htmlFor="user">User:</label>
             <input type="text" name="user" value={user} onChange={handleUserChange}/>
             <label htmlFor="password">Password:</label>
