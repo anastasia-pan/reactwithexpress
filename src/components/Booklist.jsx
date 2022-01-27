@@ -6,7 +6,7 @@ const Booklist = ({ user, setUser }) => {
   useEffect(() => {
     const fetchData = async () => {
       //http://localhost/user/:id
-      const res = await fetch(`http://localhost/user/${user.id}/sub`, {
+      const res = await fetch(`http://localhost/sub/${user.id}`, {
         method: "GET",
         mode: "cors",
         headers: {
