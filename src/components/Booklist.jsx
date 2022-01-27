@@ -28,15 +28,20 @@ const Booklist = ({ user, setUser }) => {
   return (
     <>
       <h2>{user ? user.name : "not here"}</h2>
-      {user ? (
-        <ul>
-          {myList.map((book) => (
-            <li key={book.id}>{book.book_title}</li>
-          ))}{" "}
-        </ul>
-      ) : (
-        ""
-      )}
+      <div className="listContainer">
+        {user ? (
+          <ul className="list">
+            {myList.map((book) => (
+              <li className="book" key={book.id}>
+                <div className="title">{book.book_title}</div>{" "}
+                <div className="author">{book.book_author}</div>
+              </li>
+            ))}{" "}
+          </ul>
+        ) : (
+          ""
+        )}
+      </div>
     </>
   );
 };
