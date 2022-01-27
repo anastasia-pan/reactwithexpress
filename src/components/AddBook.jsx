@@ -11,7 +11,7 @@ const AddBook = ({ user, setUser }) => {
     e.preventDefault();
     const payload = { title: bookTitle };
     console.log(user.id, "!!!!!!!!!");
-    const res = await fetch(`http://localhost/sub/17`, {
+    const res = await fetch(`http://localhost/sub/${user.id}`, {
       mode: "cors",
       method: "POST",
       headers: {

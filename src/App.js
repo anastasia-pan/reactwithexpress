@@ -4,7 +4,9 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import BookList from "./components/Booklist";
-import AddBook from "./components/AddBook";
+import Header from "./components/Header";
+
+// import AddBook from "./components/AddBook";
 
 function App() {
   //props drilling, set user at a global level
@@ -12,10 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <Register />
-      <Login user={user} setUser={setUser} />
+      <Header user={user} setUser={setUser} />
       <Profile user={user} setUser={setUser} />
-      <AddBook user={user} setUser={setUser} />
+      {/* <AddBook user={user} setUser={setUser} /> */}
     </div>
   );
 }
