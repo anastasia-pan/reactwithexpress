@@ -40,7 +40,12 @@ function Login({ user, setUser }) {
   return (
     <>
       {user ? (
-        <input type="button" value="Log Out" onClick={logOut} />
+        <>
+          <Link className="Profile" to="/Profile">
+            Profile
+          </Link>
+          <input type="button" value="Log Out" onClick={logOut} />
+        </>
       ) : (
         <form onSubmit={handleSubmit}>
           <label htmlFor="user">User: </label>

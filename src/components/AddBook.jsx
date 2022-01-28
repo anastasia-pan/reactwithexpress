@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const AddBook = ({ user, setUser, myList, setMyList }) => {
   const [bookTitle, setBookTitle] = useState("");
-
+  //sets title by monitoring submit//
   const handleTitleChange = (e) => {
     setBookTitle(e.target.value);
   };
-
+  //=================================add Book to profile function ================================================//
   const submitBook = async (e) => {
     e.preventDefault();
     const payload = JSON.stringify({ title: bookTitle });
@@ -23,28 +23,25 @@ const AddBook = ({ user, setUser, myList, setMyList }) => {
     console.log(data);
     setMyList(data);
   };
-  //   if (user) {
-  //     try {
-  //       submitBook(event);
-  //     } catch (error) {
-  //       console.log("no user");
-  //     }
-  //     console.log("submitted");
-  //   }
 
   return (
     <>
-      <form onSubmit={submitBook}>
-        <h2>Add Book</h2>
-        <label htmlFor="book">Book:</label>
-        <input
-          type="text"
-          name="bookTitle"
-          value={bookTitle}
-          onChange={handleTitleChange}
-        />
-        <input type="submit" value="Submit" />
-      </form>
+      {" "}
+      {user ? (
+        <form onSubmit={submitBook}>
+          <h2>Add Book</h2>
+          <label htmlFor="book">Book:</label>
+          <input
+            type="text"
+            name="bookTitle"
+            value={bookTitle}
+            onChange={handleTitleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      ) : (
+        ""
+      )}
     </>
   );
 };

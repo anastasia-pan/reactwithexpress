@@ -6,20 +6,19 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const Header = ({ user, setUser }) => {
   return (
     <div className="header">
-      {user ? (
-        <Link to="/Profile"> Bibliophile </Link>
-      ) : (
-        <Link to="/Home">Bibliophile</Link>
-      )}
-
-      {user ? (
-        ""
-      ) : (
-        <Link className="registerButton" to="/Register">
-          Register
-        </Link>
-      )}
-      <Login user={user} setUser={setUser} />
+      <Link className="Logo" to="/Home">
+        Bibliophile
+      </Link>
+      <div className="header-right">
+        {user ? (
+          ""
+        ) : (
+          <Link className="registerButton" to="/Register">
+            Register
+          </Link>
+        )}
+        <Login user={user} setUser={setUser} />
+      </div>
     </div>
   );
 };

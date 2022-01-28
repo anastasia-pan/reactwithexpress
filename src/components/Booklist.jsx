@@ -80,7 +80,7 @@ const BookItem = (props) => {
       </li>
       <input
         type="submit"
-        value="delete"
+        value="Delete"
         onClick={(e) => {
           console.log("apple");
           e.preventDefault();
