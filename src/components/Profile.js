@@ -28,7 +28,7 @@ const Profile = ({ user, setUser, myList, setMyList }) => {
 
   return (
     <>
-      <h2>{user ? `Welcome ${user.username}` : ""}</h2>
+      <h2>{user ? `Welcome ${user.username}` : "Please log in"}</h2>
       <h2>{user ? "" : "Not logged in"} </h2>
       <Booklist
         user={user}

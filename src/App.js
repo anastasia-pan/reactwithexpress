@@ -20,25 +20,33 @@ function App() {
     <div className="App">
       <Router>
         <Header user={user} setUser={setUser} />
+        <Switch>
+          <Route path="/Register">
+            <Register user={user} setUser={setUser} />
+          </Route>
+          <Route path="/Profile">
+            <Profile
+              user={user}
+              setUser={setUser}
+              myList={myList}
+              setMyList={setMyList}
+              subscriptionUpdate={subscriptionUpdate}
+              setSubscriptionUpdate={setSubscriptionUpdate}
+            />
 
-        <Profile
-          user={user}
-          setUser={setUser}
-          myList={myList}
-          setMyList={setMyList}
-          subscriptionUpdate={subscriptionUpdate}
-          setSubscriptionUpdate={setSubscriptionUpdate}
-        />
-        <AddBook
-          user={user}
-          setUser={setUser}
-          myList={myList}
-          setMyList={setMyList}
-          subscriptionUpdate={subscriptionUpdate}
-          setSubscriptionUpdate={setSubscriptionUpdate}
-        />
-
-        <Home user={user} setUser={setUser} />
+            <AddBook
+              user={user}
+              setUser={setUser}
+              myList={myList}
+              setMyList={setMyList}
+              subscriptionUpdate={subscriptionUpdate}
+              setSubscriptionUpdate={setSubscriptionUpdate}
+            />
+          </Route>
+          <Route path="/">
+            <Home user={user} setUser={setUser} />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );

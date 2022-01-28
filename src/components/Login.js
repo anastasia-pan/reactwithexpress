@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Login({ user, setUser }) {
   const [userName, setUserName] = useState("");
@@ -38,25 +39,27 @@ function Login({ user, setUser }) {
 
   return (
     <>
-      <h1>Log in</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="user">User: </label>
-        <input
-          type="text"
-          name="user"
-          value={userName}
-          onChange={handleUserName}
-        />
-        <label htmlFor="password">Password: </label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-        <input type="submit" value="Submit" />
+      {user ? (
         <input type="button" value="Log Out" onClick={logOut} />
-      </form>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="user">User: </label>
+          <input
+            type="text"
+            name="user"
+            value={userName}
+            onChange={handleUserName}
+          />
+          <label htmlFor="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
+          <input type="submit" value="log in" />
+        </form>
+      )}
     </>
   );
 }

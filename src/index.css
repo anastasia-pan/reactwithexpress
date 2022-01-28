@@ -10,11 +10,43 @@ body {
   color: teal;
 }
 
+input {
+  border: none;
+  background-color : teal;
+  color: white;
+  border-radius: 5%;
+}
+.header {
+  display: flex;
+  max-width: auto;
+  font-family: 'Zen Antique Soft', serif;;
+}
 
+.registerBox{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+
+}
+
+.registerForm{
+  max-width: 250px;
+
+  
+
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+button {
+  text-decoration: none;
 }
 
 .listContainer{

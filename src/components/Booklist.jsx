@@ -48,7 +48,7 @@ const Booklist = ({ user, setUser, myList, setMyList }) => {
 
   return (
     <>
-      <h2>{user ? user.name : "not here"}</h2>
+      <h2>{user ? user.name : ""}</h2>
       <div className="listContainer">
         {user ? (
           <ul className="list">
