@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const AddBook = ({ user, setUser }) => {
-  const [bookTitle, setBookTitle] = useState();
+const AddBook = ({ user, setUser, myList, setMyList }) => {
+  const [bookTitle, setBookTitle] = useState("");
 
   const handleTitleChange = (e) => {
     setBookTitle(e.target.value);
@@ -9,7 +9,7 @@ const AddBook = ({ user, setUser }) => {
 
   const submitBook = async (e) => {
     e.preventDefault();
-    const payload = { title: bookTitle };
+    const payload = JSON.stringify({ title: bookTitle });
     console.log(user.id, "!!!!!!!!!");
     const res = await fetch(`http://localhost/sub/${user.id}`, {
       mode: "cors",
@@ -21,6 +21,7 @@ const AddBook = ({ user, setUser }) => {
     });
     const data = await res.json();
     console.log(data);
+    setMyList(data);
   };
   //   if (user) {
   //     try {

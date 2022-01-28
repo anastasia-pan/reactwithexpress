@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Booklist from "./Booklist";
 
-const Profile = ({ user, setUser }) => {
+const Profile = ({ user, setUser, myList, setMyList }) => {
   const [passwordHash, setPasswordHash] = useState("initialPassword");
 
   useEffect(() => {
@@ -24,13 +24,18 @@ const Profile = ({ user, setUser }) => {
         console.log(error, "didn't fetch data");
       }
     }
-  }, [user, passwordHash]);
+  }, [user]);
 
   return (
     <>
       <h2>{user ? `Welcome ${user.username}` : ""}</h2>
       <h2>{user ? "" : "Not logged in"} </h2>
-      <Booklist user={user} setUser={setUser} />
+      <Booklist
+        user={user}
+        setUser={setUser}
+        myList={myList}
+        setMyList={setMyList}
+      />
     </>
   );
 };

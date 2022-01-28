@@ -1,0 +1,7 @@
+DONE Fix the delete loop
+
+DONE Fix Switch import (?)
+
+Fix useEffect for Booklist
+
+
