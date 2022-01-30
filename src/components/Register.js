@@ -49,7 +49,7 @@ function Register() {
           value={password}
           onChange={handlePasswordChange}
         />
-        <input type="submit" value="I want books!" />
+        <input type="submit" value="I want books!"  />
       </form>
     </div>
   );

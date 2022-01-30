@@ -23,13 +23,15 @@ input {
 }
 a{
   text-decoration:none;
-  color : #832161; 
+  color:#096B72; 
 }
 
 .header {
   display: flex;
   max-width: auto;
   font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 20px;
+  margin-top: 10px
 }
 .header-right {
   float: right;

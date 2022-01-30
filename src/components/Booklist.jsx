@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { State, useState, useEffect } from "react";
 
 const Booklist = ({ user, setUser, myList, setMyList }) => {
   const deleteItem = async (userid, bookid) => {
@@ -7,13 +7,16 @@ const Booklist = ({ user, setUser, myList, setMyList }) => {
     //http://localhost/user/:id
     if (user) {
       try {
-        const res = await fetch(`http://localhost/sub/${userid}/${bookid}`, {
-          method: "DELETE",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const res = await fetch(
+          `${process.env.REACT_APP_API}/sub/${userid}/${bookid}`,
+          {
+            method: "DELETE",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         const data = await res.json();
         console.log(data);
         setMyList(data);
@@ -27,7 +30,7 @@ const Booklist = ({ user, setUser, myList, setMyList }) => {
   useEffect(() => {
     const fetchData = async () => {
       //http://localhost/user/:id
-      const res = await fetch(`http://localhost/sub/${user.id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API}/sub/${user.id}`, {
         method: "GET",
         mode: "cors",
         headers: {

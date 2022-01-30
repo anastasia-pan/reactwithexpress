@@ -11,7 +11,7 @@ const AddBook = ({ user, setUser, myList, setMyList }) => {
     e.preventDefault();
     const payload = JSON.stringify({ title: bookTitle });
     console.log(user.id, "!!!!!!!!!");
-    const res = await fetch(`http://localhost/sub/${user.id}`, {
+    const res = await fetch(`${process.env.REACT_APP_API}/sub/${user.id}`, {
       mode: "cors",
       method: "POST",
       headers: {
